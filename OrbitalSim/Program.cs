@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using OrbitalSim.Simulation;
+using System;
+using OrbitalSim.Simulation;
+
+namespace OrbitalSim
+{
+    class Program
+    {
+        static async Task Main()
+        {
+            string tel = await OrbitSimulation.OrbitSimulationEngine();
+        }
+    }
+}
