@@ -6,7 +6,7 @@ namespace OrbitalSim.Models
     {
         public DateTime TimeStamp { get; set; }
         public double Temperature { get; set; }
-        public String Battery { get; set; }
+        public int Battery { get; set; }
         public double Velocity { get; set; }
 
         public Telemetry()
