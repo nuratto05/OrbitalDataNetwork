@@ -26,5 +26,6 @@ namespace OrbitalSim.Models
             Altitude = altitude;
             Inclination = inclination;
         }
+
     }
 }

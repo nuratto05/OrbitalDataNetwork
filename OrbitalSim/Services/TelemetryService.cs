@@ -7,9 +7,9 @@ namespace OrbitalSim.Services
     {
         private static Random rand = new Random();
 
-        public static Telemetry GetTelemetry(Satellite sat)
+        public static TelemetryData GetTelemetry(Satellite sat)
         {
-            Telemetry tel = new Telemetry();
+            TelemetryData tel = new TelemetryData();
 
             tel.Id = sat.Id;
             tel.Status = sat.Status;

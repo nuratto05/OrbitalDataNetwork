@@ -2,7 +2,7 @@
 
 namespace OrbitalSim.Models
 {
-    public class Telemetry
+    public class TelemetryData
     {
         public DateTime TimeStamp { get; set; }
         public int Id { get; set; }
@@ -11,11 +11,11 @@ namespace OrbitalSim.Models
         public int Battery { get; set; }
         public double Velocity { get; set; }
 
-        public Telemetry()
+        public TelemetryData()
         {
         }
 
-        public Telemetry(DateTime timeStamp, int id, string status, double temperature, int battery, double velocity)
+        public TelemetryData(DateTime timeStamp, int id, string status, double temperature, int battery, double velocity)
         {
             TimeStamp = timeStamp;
             Id = id;

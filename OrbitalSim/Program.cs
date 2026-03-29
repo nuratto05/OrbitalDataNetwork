@@ -11,7 +11,7 @@ namespace OrbitalSim
         
         static async Task Main()
         {
-            Queue<Telemetry> telemetryQueue = new Queue<Telemetry>();
+            Queue<TelemetryData> telemetryQueue = new Queue<TelemetryData>();
 
             var tel = OrbitSimulation.OrbitSimulationEngine(telemetryQueue);
             var send = TcpNetwork.SendTelViaTCP(telemetryQueue);

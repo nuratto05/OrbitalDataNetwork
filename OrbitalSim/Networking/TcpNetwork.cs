@@ -10,7 +10,7 @@ namespace OrbitalSim.Networking
 	public class TcpNetwork
 	{
 
-        public static async Task<string> SendTelViaTCP(Queue<Telemetry> queue)
+        public static async Task<string> SendTelViaTCP(Queue<TelemetryData> queue)
         {
             while (true)
             {
@@ -21,7 +21,7 @@ namespace OrbitalSim.Networking
             }
         }
 
-		public static void SendData(String Url, int Port, Queue<Telemetry> queue)
+		public static void SendData(String Url, int Port, Queue<TelemetryData> queue)
 		{
             if(queue.Count > 0)
             {
@@ -32,7 +32,7 @@ namespace OrbitalSim.Networking
 
                     while (queue.Count > 0)
                     {
-                        Telemetry tel = queue.Dequeue();
+                        TelemetryData tel = queue.Dequeue();
                         string message = tel.ToString();
 
                         Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
