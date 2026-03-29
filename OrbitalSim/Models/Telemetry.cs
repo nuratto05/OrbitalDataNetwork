@@ -13,7 +13,7 @@ namespace OrbitalSim.Models
         {
         }
 
-        public Telemetry(double temperature, string battery, double velocity)
+        public Telemetry(double temperature, int battery, double velocity)
         {
             TimeStamp = DateTime.Now;
             Temperature = temperature;
