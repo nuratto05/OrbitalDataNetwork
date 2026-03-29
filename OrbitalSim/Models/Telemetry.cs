@@ -1,0 +1,17 @@
+﻿using System;
+
+public class Telemetry
+{
+    public DateTime TimeStamp { get; set; }
+    public double Temperature { get; set; }
+    public String Battery { get; set; }
+    public double Velocity { get; set; }
+
+    public Telemetry( double temperature, string battery, double velocity)
+    {
+        TimeStamp = DateTime.Now;
+        Temperature = temperature;
+        Battery = battery;
+        Velocity = velocity;
+    }
+}
