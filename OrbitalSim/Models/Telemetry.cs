@@ -24,5 +24,10 @@ namespace OrbitalSim.Models
             Battery = battery;
             Velocity = velocity;
         }
+
+        public override string ToString()
+        {
+            return $"[Timestamp: {TimeStamp}] IDN: {Id}, Status: {Status}, Temperature: {Temperature}, Battery: {Battery}, Velocity: {Velocity}";
+        }
     }
 }
