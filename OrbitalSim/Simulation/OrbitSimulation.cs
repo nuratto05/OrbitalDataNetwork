@@ -7,7 +7,7 @@ using OrbitalSim.Services;
 namespace OrbitalSim.Simulation {
     public class OrbitSimulation
     {
-        public static async Task<string> OrbitSimulationEngine()
+        public static async Task<string> OrbitSimulationEngine(Queue<Telemetry> stack)
         {
 
             Satellite[] satellites = new Satellite[]
@@ -27,10 +27,11 @@ namespace OrbitalSim.Simulation {
                     Telemetry tel = new Telemetry();
                     OrbitService.updateLocation(sat);
                     tel = TelemetryService.GetTelemetry(sat);
-                    Console.WriteLine("       " + tel.ToString());
+                    Console.WriteLine(tel.ToString());
+                    stack.Enqueue(tel);
                 }
                 Console.WriteLine("");
-                await Task.Delay(5000); // 5sec
+                await Task.Delay(60000); // 5sec
             }
         }
     }
