@@ -7,20 +7,24 @@ namespace OrbitalSim.Models
         public int Id { get; set; }
         public string MissionType { get; set; }
         public string Status { get; set; }
-        public double Lat { get; set; }
-        public double Lon { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
+        public double Z { get; set; }
         public double Altitude { get; set; }
+        public double Inclination { get; set;}
 
         Random rand = new Random();
 
-        public Satellite(string missionType, string status, double lat, double lon, double altitude)
+        public Satellite(string missionType, string status, double x, double y, double z, double altitude, double inclination)
         {
             Id = rand.Next(1111, 2222);
             MissionType = missionType;
             Status = status;
-            Lat = lat;
-            Lon = lon;
+            X = x;
+            Y = y;
+            Z = z;
             Altitude = altitude;
+            Inclination = inclination;
         }
     }
 }

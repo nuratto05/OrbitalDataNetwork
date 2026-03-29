@@ -50,7 +50,6 @@ namespace OrbitalSim.Networking
                     Console.WriteLine("Closing Connection: Queue Empty");
                     stream.Close();
                     client.Close();
-                    Console.ReadKey();
 
                 }
                 catch (Exception ex)

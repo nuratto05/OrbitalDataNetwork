@@ -15,6 +15,8 @@ namespace OrbitalSim
 
             var tel = OrbitSimulation.OrbitSimulationEngine(telemetryQueue);
             var send = TcpNetwork.SendTelViaTCP(telemetryQueue);
+
+            await Task.WhenAll(tel, send);
         }
     }
 }
