@@ -5,9 +5,9 @@ namespace OrbitalSim.Services
 {
     public class OrbitService
     {
-        Random rand = new Random();
+        private static Random rand = new Random();
 
-        public void updateLocation(Satellite sat)
+        public static void updateLocation(Satellite sat)
         {
             if (sat == null) return;
 

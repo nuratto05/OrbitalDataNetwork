@@ -4,7 +4,7 @@ namespace OrbitalSim.Models
 {
     public class Satellite
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string MissionType { get; set; }
         public string Status { get; set; }
         public double Lat { get; set; }
@@ -15,7 +15,7 @@ namespace OrbitalSim.Models
 
         public Satellite(string missionType, string status, double lat, double lon, double altitude)
         {
-            id = rand.Next(1111, 2222);
+            Id = rand.Next(1111, 2222);
             MissionType = missionType;
             Status = status;
             Lat = lat;
