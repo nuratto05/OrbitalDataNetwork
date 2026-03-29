@@ -35,3 +35,9 @@ Thumbs.db
 *.db
 *.local
 *.pid
+
+
+# Ignore secrets and user-specific files
+appsettings.*.Local.json
+secrets.json
+launchSettings.json   # optional
