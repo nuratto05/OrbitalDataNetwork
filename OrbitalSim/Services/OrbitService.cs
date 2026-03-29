@@ -3,7 +3,7 @@ using OrbitalSim.Models;
 
 namespace OrbitalSim.Services
 {
-    public class Orbit
+    public class OrbitService
     {
         Random rand = new Random();
 
