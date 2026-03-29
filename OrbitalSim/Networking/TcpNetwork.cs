@@ -4,13 +4,14 @@ using System.Collections;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
+using System.Text.Json;
 
 namespace OrbitalSim.Networking
 {
 	public class TcpNetwork
 	{
 
-        public static async Task<string> SendTelViaTCP(Queue<TelemetryData> queue)
+        public static async Task<string> SendTelViaTCP(Queue<Telemetry> queue)
         {
             while (true)
             {
@@ -21,7 +22,7 @@ namespace OrbitalSim.Networking
             }
         }
 
-		public static void SendData(String Url, int Port, Queue<TelemetryData> queue)
+		public static void SendData(String Url, int Port, Queue<Telemetry> queue)
 		{
             if(queue.Count > 0)
             {
@@ -32,9 +33,11 @@ namespace OrbitalSim.Networking
 
                     while (queue.Count > 0)
                     {
-                        TelemetryData tel = queue.Dequeue();
-                        string message = tel.ToString();
+                        Telemetry tel = queue.Dequeue();
+                        //string message = tel.ToString();
 
+                        var json = JsonSerializer.Serialize<Telemetry>(tel);
+                        string message = json;
                         Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
 
                         stream.Write(data, 0, data.Length);

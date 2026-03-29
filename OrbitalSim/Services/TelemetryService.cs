@@ -7,7 +7,7 @@ namespace OrbitalSim.Services
     {
         private static Random rand = new Random();
 
-        public static TelemetryData GetTelemetry(Satellite sat)
+        public static TelemetryData GetTelemetryData(Satellite sat)
         {
             TelemetryData tel = new TelemetryData();
 
@@ -16,6 +16,13 @@ namespace OrbitalSim.Services
             tel.Temperature = rand.Next(50, 70);
             tel.Battery = rand.Next(0, 100);
             tel.Velocity = rand.Next(100, 300);
+
+            return tel;
+        }
+
+        public static TelemetryLocation GetTelemetryLocation(Satellite sat)
+        {
+            TelemetryLocation tel = new TelemetryLocation(sat);
 
             return tel;
         }

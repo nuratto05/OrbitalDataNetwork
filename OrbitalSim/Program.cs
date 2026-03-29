@@ -1,5 +1,7 @@
 ﻿using OrbitalSim.Simulation;
 using System;
+using System.Text.Json;
+using System.Text;
 using OrbitalSim.Simulation;
 using OrbitalSim.Models;
 using OrbitalSim.Networking;
@@ -11,7 +13,7 @@ namespace OrbitalSim
         
         static async Task Main()
         {
-            Queue<TelemetryData> telemetryQueue = new Queue<TelemetryData>();
+            Queue<Telemetry> telemetryQueue = new Queue<Telemetry>();
 
             var tel = OrbitSimulation.OrbitSimulationEngine(telemetryQueue);
             var send = TcpNetwork.SendTelViaTCP(telemetryQueue);
