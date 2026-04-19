@@ -20,5 +20,5 @@ namespace OrbitalSim
              
             await Task.WhenAll(tel, send);
         }
-    } 
+    }  
 }
